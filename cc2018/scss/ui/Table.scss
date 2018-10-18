@@ -1,0 +1,15 @@
+@charset 'utf-8';
+
+.fixed-table-container{
+    thead th .th-inner{
+        color: $white-opacity-seventy;
+        font-weight: $font-weight-mid;
+    }
+}
+.table{
+    &:not(.table-condensed){
+        tbody>tr>td{
+            color: $white-opacity-seventy;
+        }
+    }
+}

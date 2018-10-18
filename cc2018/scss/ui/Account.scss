@@ -1,0 +1,51 @@
+@charset 'utf-8';
+
+
+.user-info{
+    width: auto;
+    min-width: 200px;
+    height: $header-height;
+    padding: 0 15px;
+    background: transparent;
+    color: $black-opacity-four;
+    font-size: $pixel-eighteen;
+    font-weight: $font-weight-light;
+    text-align: center;
+    line-height: $header-height;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    @extend .aa;
+    &:hover{
+        background: $black-opacity-twentyfour;
+        text-decoration: none;
+    }
+    .user-avatar{
+        width: $header-height - 30px;
+        border-radius: 50%;
+        background: $white-opacity-seventy;
+        display: block;
+        line-height: 1;
+        margin-right: 10px;
+        padding: 6px;
+        .avatar-pic{
+            width: 100%;
+            max-width: 100%;
+            display: block;
+        }
+    }
+    .user-name{
+        margin: 0;
+        font-size: $pixel-twenty;
+        font-weight: $font-weight-light;
+        color: $white-opacity-seventy;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    .icon{
+        font-size: $pixel-twentyfour;
+        font-weight: $font-weight-bold;
+        color: $white-opacity-seventy;     
+    }
+}

@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+input[type=radio]{
+    -webkit-appearance: none;//去掉原有的样式
+    display:inline-block;
+    width:$radio-w;
+    height:$radio-w;
+    vertical-align:middle;
+    background-color: $black-opacity-sixteen;
+    border: $border-width solid $white-opacity-fifteen;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor:pointer;
+    position: relative;
+    &:checked{
+        background-color: $black-opacity-fourtyfive;
+        border: $border-width solid $white-opacity-twentyfour;
+        &:after{
+            position: absolute;
+            color: $white-opacity-eight;
+            content: '\2713';
+            width: 5px;
+            height: 10px;
+            top: -3px;
+            left: 3px;
+        }
+    }
+}
+.radio-checked{
+    
+}

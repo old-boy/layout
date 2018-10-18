@@ -1,0 +1,198 @@
+@charset 'utf-8';
+
+.btn{
+    display: inline-block;
+    padding: .25rem 1rem;
+    font-size: .55rem;
+    font-weight: $font-weight-light;
+    line-height: $line-height-base;
+    border: 0;
+    cursor: pointer;
+    @media (max-width: 767.98px) {
+        padding: .55rem 2rem;
+        font-size: .85rem;
+    }
+    &:active,
+    &.active,
+    &:hover,
+    &:focus,{
+        outline: 0;
+        border-color: transparent;
+    }
+    &:focus{
+        box-shadow: inherit;
+    }
+}
+.btn-small{
+    display: inline-block;
+    font-size: .45rem;
+    font-weight: 200;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-box{
+    color: $white-opacity-seventy;
+    background: $black-opacity-twentyfour;
+    font-size: .45rem;
+    font-weight: 200;
+    padding: 4px 10px;
+    border-radius: 10px;
+    max-height: 25px;
+    text-align: center;
+    line-height: 1.4;
+    margin: 7px auto;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: block;
+    &:hover,&:focus{
+        color: $logo-hover;
+    }
+}
+.btn-box-selected{
+    background: $black-opacity-four;
+}
+.btn-cloudclocking{
+    color: $white;
+    background-color: $logo;
+    border-color: $logo;
+    &:hover,
+    &:focus{
+        background-color: $logo-hover;
+        transition: $transition-base;
+    }
+}
+.btn-back{
+    color: $white-opacity-thirtysix;
+    font-size: $pixel-fourteen;
+    background: $white-opacity-twentyfour;
+    padding: $rem-fifteen;
+    display: flex;
+    align-items: center;
+     &:hover,
+     &:focus{
+        background-color: $white-opacity-fifteen;
+        transition: $transition-base;
+    }
+}
+.btn-danger,.btn-offline{
+    background-color: $danger;
+    border-color: $danger;
+    &:hover{
+        background-color: $danger-hover;
+        border-color: $danger-hover;
+        transition: $transition-base;
+    }
+}
+.btn-primary{
+    background-color: $dark-gray;
+    border-color: $dark-gray;
+    color: $white-opacity-eight;
+    &:hover{
+        background-color: $black-opacity-seventy;
+        border-color: $black-opacity-seventy;
+        transition: $transition-base;
+    }
+}
+.btn-default,.btn-secondary{
+    background-color: $white-opacity-fifteen;
+    border-color: $white-opacity-fifteen;
+    &:hover{
+        background-color: $white-opacity-twelve;
+        border-color: $white-opacity-twelve;
+        transition: $transition-base;
+    }
+}
+.btn-default{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    .icon{
+        margin-right: 6px;
+    }
+}
+.btn-type{
+    padding: .05rem;
+    font-size: $pixel-fourteen - 2;
+    min-width: $min-height + 10;
+}
+.btn-export{
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+    color: $white-opacity-seventy;
+    position: relative;
+    transition: $transition-base;
+    .icon{
+        font-size: 1rem;
+    }
+}
+.btn-secondary{
+//  color: $black-opacity-seventy;
+    outline:0; 
+    &:hover,&:active,&:focus{
+        background-color: $white-opacity-fifteen;
+        border-color: $white-opacity-fifteen;
+        outline: 0;
+    }
+}
+.btn-cancel{
+    background-color: $white-opacity-eight;
+    border-color: $white-opacity-eight;
+    color: $black-opacity-seventy;
+    &:hover{
+        background-color: $white-opacity-seventy;
+        border-color: $white-opacity-seventy;
+        transition: $transition-base;
+    }
+}
+.btn-online{
+    color: $white-opacity-seventy;
+    background-color: $green;
+    border-color: $green;
+    &:hover{
+        background-color: $green-hover;
+        border-color: $green-hover;
+        transition: $transition-base;
+    }
+}
+.btn-offline{
+    color: $white-opacity-seventy;
+}
+.show>.btn-secondary.dropdown-toggle{
+    background-color: $white-opacity-fifteen;
+    border-color: $white-opacity-fifteen;
+    outline: 0;
+    box-shadow:0 0 transparent;
+    &:focus{
+        box-shadow: inherit;
+    }
+}
+.btn-block{
+    padding: .45rem 1rem;
+}
+a.btn-small,
+a.btn,
+a.btn-box{
+    @extend .aa;
+}
+
+
+
+
+/*device*/
+.device{
+   .btn-select{
+       height: 28px;
+       padding: .15rem .75rem;
+       background: transparent;
+       border-color: 0;
+       margin-bottom: 0;
+   } 
+}
+

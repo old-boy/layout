@@ -1,0 +1,9 @@
+@charset 'utf-8';
+
+//在页面中尽量不要用form-group
+.form-group{
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    position: relative;
+}

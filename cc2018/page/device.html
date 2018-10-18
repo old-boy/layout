@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9, IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta property="og:type" content="website">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/font.css"/>
+ 	<link rel="stylesheet" type="text/css" href="../css/management.css"/>
+ 	<link href="../images/ico.ico" rel="icon" type="image/x-icon">
+ 	<title>Device</title>
+  </head>
+  <body class="container-fluid default-bg normal-padding">
+  	<div class="main">
+  		<!--sidebar-->
+  		<div class="sidebar scroll-bar">
+  			<div class="item-sidebar logo">
+				<span class="icon icon-rem-thirtysix logo-color cloudclocking-logo"></span>
+				<span class="icon icon-rem-twenty logo-color cloudclocking-logo-title"></span>
+			</div>
+			<div class="menu-list">
+  				<div class="item">
+  					<a href="#" class="record a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-dashboard"></span><span class="menu-info">Dashboard</span></a>
+  				</div>
+  			</div>
+			<div class="dividing-line">
+				<div class="dividing-bolck">Data</div>
+				<div class="line"></div>
+			</div>
+  			<div class="menu-list">
+  				<div class="item">
+  					<a href="record.html" class="record a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-record"></span><span class="menu-info">Record</span></a>
+  				</div>
+  				<div class="item">
+  					<a href="analyze.html" class="analyze a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-analyze"></span><span class="menu-info">Analyze</span></a>
+  				</div>
+  				<div class="item">
+  					<a href="department.html" class="department a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-department"></span><span class="menu-info">Department</span></a>
+  				</div>
+  				<div class="item">
+  					<a href="employee.html" class="employee a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-employee"></span><span class="menu-info">Employee</span></a>
+  				</div>
+  				<div class="item active">
+  					<a href="#" class="device a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-device"></span><span class="menu-info">Device</span></a>
+  				</div>
+  			</div>
+  			<div class="dividing-line">
+				<div class="dividing-bolck">Rules</div>
+				<div class="line"></div>
+			</div>
+			<div class="menu-list">
+  				<div class="item">
+  					<a href="#" class="shift a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-shift"></span><span class="menu-info">Shift</span></a>
+  				</div>
+  				<div class="item">
+  					<a href="#" class="schedule a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-schedule"></span><span class="menu-info">Schedule</span></a>
+  				</div>
+  				<div class="item">
+  					<a href="#" class="access-rules a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-access-rules"></span><span class="menu-info">Access Rules</span></a>
+  				</div>
+  				<div class="item">
+  					<a href="#" class="time-group a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-time-group"></span><span class="menu-info">Time Group</span></a>
+  				</div>
+  			</div>
+  			<div class="item-sidebar certification">
+  				<span class="icon icon-font icon-rem-twentyfour cloudclocking-nav"></span>
+  			</div>
+		</div>
+		<!--content-->
+		<div class="content">
+			<div class="header">
+				<div class="back"></div>
+				<h2 class="content-title">Record</h2>
+				<div class="user-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account">
+					<div class="user-avatar"><img src="../images/cloudclocking-logo.png" alt="" class="avatar-pic" /></div>
+					<h2 class="user-name">cloudclocking</h2>
+				</div>
+				<ul class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="account">
+					<li class="dropdown-item"><a class="dropdown-link" href="javascript:;">Change Password</a></li>
+					<li class="dropdown-item"><a class="dropdown-link" href="javascript:;">Log Out</a></li>
+				</ul>
+			</div>
+			<!--box-->
+			<div class="box device">
+				<div class="filter">
+					<div class="search filter-header">
+						<form action="">
+							<div class="input-group-prepend">
+								<div class="empty-btn"><span class="icon"></span></div>
+					        		<input type="text" class="form-control filter-input">
+					        		<div class="search-bar">
+					        			<span class="icon icon-search cloudclocking-search"></span>
+					        			<span class="search-title">Search</span>
+					        		</div>
+					        		<div class="empty-btn filter-btn "><span class="icon cloudclocking-filter"></span></div>
+					        	</div>
+						</form>
+					</div>
+					<div class="search-pannel search-bg"></div>
+					<!--搜索记录列表，ios兼容不好，暂时隐藏-->
+					<!--<ul class="record-list">
+		        			<a href="#" class="item-record">Organization management</a>
+		        			<a href="#" class="item-record">Scheduling management</a>
+		        			<a href="#" class="item-record">Record management</a>
+		        			<a href="#" class="item-record">Statistical report</a>
+					</ul>-->
+		        		<!--筛选列表-->
+	        			<form class="scroll-bar" action="">
+	        				<ul class="filter-list">
+	        					<div class="dropdown-btn-group">
+	        						<div class="dropdown-btn-item">
+	        							<a href="#" class="btn btn-small btn-default btn-select" aria-label="export type" title="data" data-toggle="dropdown"> Show All
+										<span class="icon icon-color icon-pixel-eighteen cloudclocking-down-arrow"></span>
+									</a>
+									<ul class="dropdown-menu scroll-bar" role="menu">
+										<li class="report-type" role="menuitem" data-type="1">
+											<a href="javascript:void(0)">CC3</a>
+										</li>
+										<li class="report-type" role="menuitem" data-type="2">
+											<a href="javascript:void(0)">CC5</a>
+										</li>
+									</ul>
+	        						</div>
+	        						<div class="dropdown-btn-item">
+	        							<a href="#" class="btn btn-small btn-default btn-select" aria-label="export type" title="data" data-toggle="dropdown">Filter Type
+										<span class="icon icon-color icon-pixel-eighteen cloudclocking-down-arrow"></span>
+									</a>
+									<ul class="dropdown-menu scroll-bar" role="menu">
+										<li class="report-type" role="menuitem" data-type="1">
+											<a href="javascript:void(0)">Online</a>
+										</li>
+										<li class="report-type" role="menuitem" data-type="2">
+											<a href="javascript:void(0)">Offline</a>
+										</li>
+									</ul>
+	        						</div>
+	        					</div>
+	        					<div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameOne">
+						    		<div class="media" for="companyNameOne">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Stockon(CC3)</h5>
+							  			<span class="user-num">Stockton office marketing</span>
+							  		</div>
+							  	</div>
+							  	<button class="btn btn-type btn-online">Online</button>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameTwo">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">Henderson</span>
+							  		</div>
+							  	</div>
+							  	<button class="btn btn-type btn-online">Online</button>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameThree">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Stockon Marketing</h5>
+							  			<span class="user-num">Stockton office marketing</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+						    <div class="form-check Offline filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameFour">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">St. Paul</span>
+							  		</div>
+							  		<button class="btn btn-type btn-offline">Offline</button>
+							  	</div>
+						    </div>
+						    <div class="form-check Offline filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameTwo">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC3</h5>
+							  			<span class="user-num">St. Paul</span>
+							  		</div>
+							  		<button class="btn btn-type btn-offline">Offline</button>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameThree">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">St. Paul</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameFour">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">Stockton office marketing</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+							<div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameFour">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">Stockton office marketing</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameFour">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">San Diego</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+						    <div class="form-check Offline filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameFour">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC3</h5>
+							  			<span class="user-num">San Diego</span>
+							  		</div>
+							  		<button class="btn btn-type btn-offline">Offline</button>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameTwo">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">Bakersfield office BD</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameThree">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">Washington</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameFour">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">Washington</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameFour">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">Washington</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameFour">
+						    		<div class="media">
+							  		<img class="user-avatar" src="../images/64-pro.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">CC5</h5>
+							  			<span class="user-num">Washington</span>
+							  		</div>
+							  		<button class="btn btn-type btn-online">Online</button>
+							  	</div>
+						    </div>
+	        				</ul>
+	        			</form>
+	        			<!--筛选面板-->
+	        			<div class="filter-pannel">
+	        				<div class="filter-pannel-header">
+	        					<div class="filter-close icon icon-color cloudclocking-error"></div>
+	        				</div>
+	        				<div class="filter-pannel-content">
+	        					<div class="filter-date">
+	        						<div class="breadcrumb-title">Select Date Range</div>
+								<div class='input-group date'>
+				                    <input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="startDate">
+				                    <span class="input-range"> ~ </span>
+				                    <input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="endDate">
+				                </div>
+	        					</div>
+	        					<div class="confirm">
+			        				<a href="#" class="btn btn-small btn-danger">Reset</a>
+											<a href="#" class="btn btn-small btn-default">Done</a>
+			        			</div>
+	        				</div>
+	        			</div>
+	        			<!--搜索/筛选 btn,可选功能，部分页面需要添加-->
+	        			<div class="filter-bottm">
+	        				<a href="#" class="btn btn-small btn-danger">Delete</a>
+									<a href="#" class="btn btn-small btn-default">Modify</a>
+	        			</div>
+				</div>
+				<div class="filter-content">
+					<!--content添加/新增/修改，可选功能，部分页面需要添加-->
+					<div class="content-header">
+						<div class="left"></div>
+						<div class="right">
+							<a href="#" class="btn-box add" data-toggle="modal" data-target="#add">Add</a>
+							<a href="#" class="btn-box edit" data-toggle="modal" data-target="#edit">Edit</a>
+							<a href="#" class="btn-box del" data-toggle="modal" data-target="#del">Delete</a>
+						</div>
+					</div>
+					<div class="content-pannel scroll-bar">
+						<div class="content-pannel-header">
+							<div class="left">
+								<figure class="avatar">
+									<img src="../images/110-pro.png" alt="" class="avatar" />
+								</figure>
+								<div class="info">
+									<h1 class="header-title">Stockon(CC3)</h1>
+									<p class="header-des email">Stockton office marketing</p>
+									<button class="btn btn-type btn-online">Online</button>
+								</div>
+							</div>
+							<div class="right">
+								<a href="#" class="btn btn-small btn-default"><span class="icon icon-color icon-pixel-twentyfour cloudclocking-schedule"></span>User</a>
+								<a href="#" class="btn btn-small btn-default"><span class="icon icon-color icon-pixel-twentyfour cloudclocking-record"></span>Record</a>
+							</div>
+						</div>
+						<div class="content-pannel-details">
+							<div class="breadcrumb">
+								<div class="breadcrumb-title">Basic info</div>
+							</div>
+							<div class="card card-content card-list">
+								<div class="list-group">
+									<div class="list-group-item">
+										<p class="item-sub-title">Department Name</p>
+										<h5 class="item-title">Stockton office </h5>
+									</div>
+									<div class="list-group-item">
+										<p class="item-sub-title">Registration Time</p>
+										<h5 class="item-title">2017/05/21</h5>
+									</div>
+									<div class="list-group-item">
+										<p class="item-sub-title">Firmware</p>
+										<h5 class="item-title">02.12.78</h5>
+									</div>
+									<div class="list-group-item">
+										<p class="item-sub-title">Serial Number</p>
+										<h5 class="item-title">1470120317070029</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-bottom">
+					<a href="#" class="question"><span class="icon icon-font icon-rem-twentyfour cloudclocking-help"></span></a>
+				</div>
+			</div>
+		</div>
+  	</div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+    <script src="../js/common/bootstrap-datetimepicker.js"></script>
+  	<script src="../js/common/com.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,32 @@
+@charset 'utf-8';
+
+.breadcrumb{
+    width: 100%;
+    padding: .15rem 1rem;
+    list-style: none;
+    color: $white-opacity-twentyfour;
+    font-weight: $font-weight-light;
+    background-color: $black-opacity-fifteen;
+    height: 30px;
+    border-radius: 0;
+    margin-bottom: 0;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    .breadcrumb-title{}
+    .breadcrumb-num{
+        padding: 4px;
+        color: $white-opacity-eight;
+        background: $white-opacity-twentyfour;
+        border-radius: 4px;
+        display: block;
+        height: 24px;
+        width: auto;
+        line-height: 1.2;
+    }
+}

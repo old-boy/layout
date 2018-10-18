@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+.card{
+    border: 0;
+    border-radius: 0;
+    padding: .65rem 2.2rem;
+    margin-bottom: 0;
+    background: transparent;
+}
+.card-name{
+    font-size: $rem-twenty;
+    color: $white-opacity-seventy;
+    font-weight: $font-weight-light;
+}
+.card-content{
+    padding: 0;
+}
+.card-list{
+    height: auto;
+}
+

@@ -1,0 +1,101 @@
+@charset 'utf-8';
+
+.list-group{
+    .list-group-item{
+        border-radius: 0;
+        padding: 0 2.2rem;
+        background: transparent;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 70px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-bottom: $border;
+        &:last-child{
+            border-bottom: 0;
+        }
+        &:hover{
+            background: $black-opacity-ten;
+            transition: $transition-base;
+        }
+        @media (max-width: 768px){
+            min-height: auto;
+            &:hover{
+                background: $black-opacity-ten;
+                transition: $transition-base;
+            }
+        }
+        .media{
+            flex: 1 1 auto;
+            max-width: calc(100%/3);
+            @media (max-width: 1200px){
+                max-width: calc(100%/2);
+            }
+            @media (max-width: 1024px){
+                max-width: calc(100%/1);
+            }
+        }
+    }
+}
+
+/*bootstrap tree list-group*/
+
+#tree{
+   .list-group-item{
+        display: inherit;
+        min-height: 40px;
+        line-height: 40px;
+        font-weight: $font-weight-light;
+        color: $white-opacity-seventy;
+        &:hover{
+            background: $black-opacity-ten;
+        }
+    }
+    .node-selected{
+        background: $black-opacity-twelve;
+        color: $black-opacity-fourtyfive;
+        @extend .hover-transition;
+    } 
+}
+
+/*employee*/
+.employee{
+    .list-group-item{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: nowrap;
+        &:hover{
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+}
+
+/*device*/
+.device{
+    .list-group-item{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: nowrap;
+        &:hover{
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,215 @@
+@charset 'utf-8';
+
+.nav-wrapper{
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: $fff;
+    background: $left-nav-bg;
+    padding: .75em;
+    min-height: 43.75em;
+    width: 28%;
+    float: left;
+    position: relative;
+    margin-left: -1px;
+    @media (max-width: 1000px){
+        display: none;
+        position: absolute;
+        right: 0;
+        width: 0;
+        height: 100%;
+        opacity: 1;
+        transform: scale(0);
+    }
+}
+.nav-logo-item{
+    min-height: 100px;
+    text-align: center;
+    .icon-logo-size{
+        font-size: 10em;
+    }
+}
+.nav-menu-all{
+    color: $slider-bar-color;
+    .nav-link{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .85714em;
+        font-size: .875em;
+        border-radius: 4px;
+        position: relative;
+        line-height: 1.42857em;
+    }
+    .nav-active{
+        .icon-pp,h3{
+            color: $fff;
+        }
+    }
+    .nav-menu-item{
+        &:hover{
+            background: $slider-bar-bg-hover;
+            transition: $transition-base;
+        }
+    }
+    &:first-child{
+        &:hover{
+            background: transparent;
+            transition: $transition-base;
+        }
+    }
+}
+.nav-menu-all{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(150%);
+    opacity: 0;
+    pointer-events: none;
+    padding: .75em;
+    transition: all .5s ease-in;
+}
+.nav-list-active{
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateX(0);
+    overflow-y: auto;
+    height: 100%;
+    animation-name: leftmove;
+    animation-duration: 1s;
+}
+
+@keyframes leftmove {
+    from {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+h3{
+    margin: 0;
+    font-size: $px-16;
+    color: $slider-bar-color;
+    font-weight: $font-weight-400;
+}
+
+/*自适应导航*/
+.article-nav-wrapper{
+    @media (min-width: 1000px){
+        display: none;
+    }
+    @media (max-width: 1000px){
+        display: block;
+        color: $black;
+        background: $f8;
+        border-radius: 4px 4px 0 0;
+        min-height: inherit;
+    }
+    .nav-menu-responsive{
+        font-size: 18.4px;
+        .responsive-menu{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .65217em .97826em;
+            position: relative;
+            color: $black;
+            &:last-child{
+                cursor: pointer;
+            }
+        }
+    }
+}
+.close {
+    position: absolute;
+    right: 10px;
+    opacity: .6;
+    text-shadow: inherit;
+    z-index: 999999;
+    cursor: pointer;
+    span{
+        color: $main-color;
+        font-size: $px-24;
+        display: none;
+        @media (max-width: 768px){
+            display: block;
+        }
+    }
+}
+.show{
+    z-index: 2;
+    @media (max-width: 768px) {
+        display: block;
+        width: 100%;
+        top: 2vh;
+        margin-top: 0!important;
+        height: 96vh;
+        position: fixed;
+        z-index: 999997;
+        border-radius: 10px;
+        margin: 0;
+        left: 2vw;
+        right: 2vw;
+        transition: all .3s ease;
+        animation-name: show-nav;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+}
+.hide{
+   animation-name: hide-nav;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+}
+.nav-blur{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+@keyframes hide-nav{
+    form{
+        width: 96vw;
+        transform: scale(1);
+        opacity: 1;
+    }
+    to{
+        width: 0;
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+@keyframes show-nav{
+    form{
+        width: 0;
+        transform: scale(0);
+    }
+    to{
+        width: 96vw;
+        transform: scale(1);
+    }
+}
+@keyframes hide-nav{
+    form{
+        width: 96vw;
+        transform: scale(1);
+    }
+    to{
+        width: 0;
+        transform: scale(0);
+    }
+}
+@keyframes move-left-menu{
+    form{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-80%);
+    }
+}

@@ -1,0 +1,119 @@
+@charset 'utf-8';
+
+.container-main-content{
+    width: 72%;
+    height: 100%;
+    float: left;
+    position: relative;
+    @media (max-width: 1000px){
+        width: 100%;
+    }
+    .container-inner{
+        transition: opacity .3s .3s linear;
+        article{
+            padding: 3em;
+            @media (max-width: 768px){
+                padding: 1em;
+            }
+        }
+    }
+}
+
+.support-main-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3em;
+    border-bottom: 1px solid $ed;
+    .support-main-section-item{
+        flex: 1 1 auto;
+        width: 26%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        @media (max-width: 996px){
+            width: 40%;
+        }
+        @media (max-width: 768px){
+            width: 40%;
+        }
+        .link-article{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 1em;
+            border: 2px solid $fff;
+            border-radius: 4px;
+            transition: all .3s ease;
+            &:hover{
+                border: 2px solid $main-color;
+                box-shadow: 4px 4px 6px $f2f2f2;
+            }
+            .article-warp{
+                max-width: 13.75em;
+                margin: 0 auto 0 auto;
+                word-wrap: break-word;
+                .article-title{
+                    margin-bottom: 0;
+                    color: $black;
+                    transition: color .3s;
+                    font-weight: $font-weight-400;
+                    font-size: 1em;
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+}
+.support-featured-section{
+    text-align: center;
+    .section-title{
+        font-weight: $font-weight-300 !important;
+        color: $black;
+        font-size: 1.73913em;
+        margin-bottom: 1.5em;
+        display: flex;
+        justify-content: center;
+    }
+    .article-list{
+        ul{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            @media (max-width: 768px){
+                padding: 0;
+                justify-content: center;
+            }
+            li{
+                flex: 1 1 auto;
+                width: 50%;
+                word-break: break-word;
+                line-height: 1.42857em;
+                margin-bottom: .75em;
+                text-align: left;
+                @media (max-width: 768px){
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        .link-article{
+            color: $black;
+            text-decoration: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
+            &:hover{
+                color: $main-hover;
+                transition: $transition-base;
+            }
+        }
+    }
+}
+
+.feature-right-6{
+    padding-right: 6px;
+}
+

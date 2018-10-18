@@ -1,0 +1,1533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9, IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta property="og:type" content="website">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font.css"/>
+ 	<link rel="stylesheet" type="text/css" href="css/component-page.css"/>
+ 	<link href="images/ico.ico" rel="icon" type="image/x-icon">
+ 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+ 	<title>Component</title>
+  </head>
+	<body class="container-fluid default-bg normal-padding scroll-bar">
+		<div class="container">
+			<div class="alert alert-success" role="alert">
+			  <h4 class="alert-heading">CloudClocking Component</h4>
+			  <p>CloudClocking中用到的ui与结构</p>
+			  <p>展示效果可能会有误差，参考做好的 analyze.html / department.html / device.html / empolyee.html等页面</p>
+			  <p>仅适配到平板</p>
+			  <br />
+			  <p>cloud-component.html 为根据画好的页面做的一个ui demo</p>
+			  <p>component-page.css 为demo 样式，不属于 CloudClocking 的样式</p>
+			  <hr>
+			  <a class="demo-a" href="page/analyze.html">analyze</a>
+			  <a class="demo-a" href="page/department.html">department</a>
+			  <a class="demo-a" href="page/device.html">device</a>
+			  <a class="demo-a" href="page/employee.html">empolyee</a>
+			  <a href="design/2.png" class="demo-a">design</a>
+			  <a href="page/sliderbar.html" class="demo-a">siderbar</a>
+			  <a href="page/login.html" class="demo-a">Login</a>
+			</div>
+			<div class="xmp-warp scroll-bar">
+				<details>
+				    <summary>SCSS</summary>
+				    <xmp data-lang="HTML">
+				    	网站的样式修改：
+				    		1. management.scss 分别加载 ui.scss 与 common.scss 
+				    		2. 每个ui都是独立的，比如 Input.scss / sidebar.scss , 大部分都是修改 bootstrap 
+				    		3. 修改单独的ui要进ui目录去修改对应的样式
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>网站依赖 bootstrap/4.0.0</summary>
+				    <xmp data-lang="HTML">
+				    css:
+				    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+				    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css" rel="stylesheet">
+				    <link href="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet">
+				    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+				    <link rel="stylesheet" type="text/css" href="css/font.css"/>
+				 	<link rel="stylesheet" type="text/css" href="css/management.css"/>
+				 	js:
+				 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+				    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+				    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+				    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+				    <script src="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+				    <script src="js/common/bootstrap-datetimepicker.js"></script>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>布局</summary>
+				    	<xmp data-lang="HTML" class="scroll-bar">
+				    		<body class="container-fluid default-bg normal-padding">
+				    			<div class="main">
+				    				<!--sidebar-->
+				    				<div class="sidebar scroll-bar"></div>
+				    				<!--content-->
+				    				<div class="content">
+				    					<!--header 含登录模块-->
+				    					<div class="header"></div>
+				    					<!--header 下面模块，device为sidebar中的某一个子菜单，如果这个菜单下有特殊样式，就加在这里-->
+				    					<div class="box device">
+				    						<!--filter 筛选模块，包含搜索与子分类与筛选条件-->
+				    						<div class="filter">
+				    							<!--search 搜索-->
+				    							<div class="search filter-header"></div>
+				    							<!--sidebar对应的子分类-->
+				    							<form class="scroll-bar" action=""></form>
+				    							<!--filter 筛选面板-->
+				    							<div class="filter-pannel"></div>
+				    							<!--filter 修改与删除子分类-->
+				    							<div class="filter-bottm"></div>
+				    						</div>
+				    						<!--子分类对应的详情模块-->
+				    						<div class="filter-content">
+				    							
+				    						</div>
+				    					</div>
+				    				</div>
+				    			</div>
+				    		</body>
+				    		
+				    		说明：
+				    		1. 在需要添加滚动条的位置，添加这个 'scroll-bar' class
+				    		2. sidebar 最小宽度，当屏幕小于 768 时, sidebar 自动向左缩小成一个图标的列，大于 768时 sidebar 自动向右展开
+				    		3. filter 固定宽度
+				    		4. content 自适应宽度
+				    		5. filter-pannel 与 filter-bottm 均为浮动状态
+				    		6. body 不滚动，仅内部各div撑满时局部滚动
+				    </xmp>
+				</details>
+				<details>
+				    <summary>可切换的背景：default-bg</summary>
+				    <xmp data-lang="HTML">
+				    	通过改变body的"default-bg"来切换背景颜色
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>局部纵向滚动：scroll-bar</summary>
+				    <xmp data-lang="HTML">
+				    	通过给可能内容会纵向溢出的div添加scroll-bar
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>icon</summary>
+				    <div class="xmp scroll-bar">
+					    	<ul class="icon-list">
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-close"></span>
+				    				<p>.cloudclocking-close</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-access-rules"></span>
+				    				<p>.cloudclocking-access-rules</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-add"></span>
+				    				<p>.cloudclocking-add</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-analyze"></span>
+				    				<p>.cloudclocking-analyze</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-authenticate"></span>
+				    				<p>.cloudclocking-authenticate</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-card"></span>
+				    				<p>.cloudclocking-card</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-cloud-block"></span>
+				    				<p>.cloudclocking-cloud-block</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-delete"></span>
+				    				<p>.cloudclocking-delete</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-dashboard"></span>
+				    				<p>.cloudclocking-dashboard</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-department"></span>
+				    				<p>.cloudclocking-department</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-device"></span>
+				    				<p>.cloudclocking-device</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-down-arrow"></span>
+				    				<p>.cloudclocking-down-arrow</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-down-block-arrow"></span>
+				    				<p>.cloudclocking-down-block-arrow</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-down-load"></span>
+				    				<p>.cloudclocking-down-load</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-edit"></span>
+				    				<p>.cloudclocking-edit</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-employee"></span>
+				    				<p>.cloudclocking-employee</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-error"></span>
+				    				<p>.cloudclocking-error</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-filter"></span>
+				    				<p>.cloudclocking-filter</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-fingerprint"></span>
+				    				<p>.cloudclocking-fingerprint</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-help"></span>
+				    				<p>.cloudclocking-help</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-holiday"></span>
+				    				<p>.cloudclocking-holiday</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-left-arrow"></span>
+				    				<p>.cloudclocking-left-arrow</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-logo-title"></span>
+				    				<p>.cloudclocking-logo-title</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-logo"></span>
+				    				<p>.cloudclocking-logo</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-nav"></span>
+				    				<p>.cloudclocking-nav</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-ok"></span>
+				    				<p>.cloudclocking-ok</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-password"></span>
+				    				<p>.cloudclocking-password</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-question"></span>
+				    				<p>.cloudclocking-question</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-record"></span>
+				    				<p>.cloudclocking-record</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-recycle-bin"></span>
+				    				<p>.cloudclocking-recycle-bin</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-right-arrow"></span>
+				    				<p>.cloudclocking-right-arrow</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-right-arrow"></span>
+				    				<p>.cloudclocking-right-arrow</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-schedule"></span>
+				    				<p>.cloudclocking-schedule</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-search"></span>
+				    				<p>.cloudclocking-search</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-shift"></span>
+				    				<p>.cloudclocking-shift</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-site"></span>
+				    				<p>.cloudclocking-site</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-time-group"></span>
+				    				<p>.cloudclocking-time-group</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-up-arrow"></span>
+				    				<p>.cloudclocking-up-arrow</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-up-block-arrow"></span>
+				    				<p>.cloudclocking-up-block-arrow</p>
+				    			</li>
+				    			<li class="icon-item">
+				    				<span class="icon icon-color icon-pixel-thirtysix cloudclocking-up-load"></span>
+				    				<p>.cloudclocking-up-load</p>
+				    			</li>
+				    		</ul>
+				    </div>
+				</details>
+				<details>
+				    <summary>sidebar 伸缩菜单</summary>
+				    	<div class="demo scroll-bar">
+				    		<div class="sidebar scroll-bar">
+				    			<div class="shrink-list">
+										<div class="shrink-item">
+											<a href="#" class="main-menu">
+												<span class="icon icon-font icon-rem-twentyfour cloudclocking-record"></span>
+												<span class="menu-info">Record</span>
+												<span class="icon icon-font icon-rem-fourteen cloudclocking-down-arrow"></span>
+											</a>
+											<ul class="sub-menu">
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+											</ul>
+										</div>
+										<div class="shrink-item">
+											<a href="#" class="main-menu">
+												<span class="icon icon-font icon-rem-twentyfour cloudclocking-analyze"></span>
+												<span class="menu-info">Analyze</span>
+											</a>
+											<ul class="sub-menu">
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+											</ul>
+										</div>
+									</div>
+				    		</div>
+				    	</div>
+				    <xmp data-lang="HTML">
+				    	
+				    	shrink-list 伸缩菜单
+				    	menu-list 不伸缩
+				    		<div class="sidebar scroll-bar">
+				    			<div class="shrink-list">
+										<div class="shrink-item">
+											<a href="#" class="main-menu">
+												<span class="icon icon-font icon-rem-twentyfour cloudclocking-record"></span>
+												<span class="menu-info">Record</span>
+												<span class="icon icon-font icon-rem-fourteen cloudclocking-down-arrow"></span>
+											</a>
+											<ul class="sub-menu">
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+											</ul>
+										</div>
+										<div class="shrink-item">
+											<a href="#" class="main-menu">
+												<span class="icon icon-font icon-rem-twentyfour cloudclocking-analyze"></span>
+												<span class="menu-info">Analyze</span>
+											</a>
+											<ul class="sub-menu">
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+												<li class="sub-item"><a href="#" class="sub-menu-link">sub-menu</a></li>
+											</ul>
+										</div>
+									</div>
+				    		</div>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>sidebar</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="sidebar scroll-bar">
+				  			<div class="item-sidebar logo">
+								<span class="icon icon-rem-thirtysix logo-color cloudclocking-logo"></span>
+								<span class="icon icon-rem-twenty logo-color cloudclocking-logo-title"></span>
+							</div>
+							<div class="menu-list">
+				  				<div class="item active">
+				  					<a href="#" class="record a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-dashboard"></span><span class="menu-info">Dashboard</span></a>
+				  				</div>
+				  			</div>
+							<div class="dividing-line">
+								<div class="dividing-bolck">Data</div>
+								<div class="line"></div>
+							</div>
+				  			<div class="menu-list">
+				  				<div class="item">
+				  					<a href="#" class="record a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-record"></span><span class="menu-info">Record</span></a>
+				  				</div>
+				  				<div class="item">
+				  					<a href="#" class="analyze a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-analyze"></span><span class="menu-info">Analyze</span></a>
+				  				</div>
+				  				<div class="item">
+				  					<a href="#" class="department a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-department"></span><span class="menu-info">Department</span></a>
+				  				</div>
+				  				<div class="item">
+				  					<a href="#" class="employee a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-employee"></span><span class="menu-info">Employee</span></a>
+				  				</div>
+				  				<div class="item active">
+				  					<a href="#" class="device a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-device"></span><span class="menu-info">Device</span></a>
+				  				</div>
+				  			</div>
+				  			<div class="dividing-line">
+								<div class="dividing-bolck">Rules</div>
+								<div class="line"></div>
+							</div>
+							<div class="menu-list">
+				  				<div class="item">
+				  					<a href="#" class="shift a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-shift"></span><span class="menu-info">Shift</span></a>
+				  				</div>
+				  				<div class="item">
+				  					<a href="#" class="schedule a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-schedule"></span><span class="menu-info">Schedule</span></a>
+				  				</div>
+				  				<div class="item">
+				  					<a href="#" class="access-rules a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-access-rules"></span><span class="menu-info">Access Rules</span></a>
+				  				</div>
+				  				<div class="item">
+				  					<a href="#" class="time-group a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-time-group"></span><span class="menu-info">Time Group</span></a>
+				  				</div>
+				  			</div>
+						</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class="menu-list">
+			  				<div class="item active">
+			  					<a href="#" class="record a-link">
+			  						<span class="icon icon-font icon-rem-twentyfour cloudclocking-dashboard"></span>
+			  						<span class="menu-info">Dashboard</span>
+			  					</a>
+			  				</div>
+			  			</div>
+						<div class="dividing-line">
+							<div class="dividing-bolck">Data</div>
+							<div class="line"></div>
+						</div>
+							说明：
+						    	1. 默认/点击选中 / 滑过状态 item active
+						    	2. 高度可能会溢出 <div class="sidebar scroll-bar"> ，添加了 scroll-bar
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>Button</summary>
+				    <div class="demo scroll-bar">
+				    		<button class="btn btn-type btn-online">Online</button>
+				    		<button class="btn btn-type btn-offline">Offline</button>
+				    		
+				    		<div class="box">
+							<a href="#" class="btn-box add" data-toggle="modal" data-target="#add">Add</a>
+							<a href="#" class="btn-box del" data-toggle="modal" data-target="#del">Delete</a>
+							<a href="#" class="btn-box edit" data-toggle="modal" data-target="#edit">Edit</a>
+						</div>
+						<div class="box">
+							<button type="submit" class="btn btn-block btn-cloudclocking">Login</button>
+						</div>
+						<div class="box">
+							<a href="#" class="btn btn-small btn-danger">Reset</a>
+							<a href="#" class="btn btn-small btn-default">Done</a>
+						</div>
+						<div class="box">
+							<a href="#" class="btn btn-small btn-default">
+								<span class="icon icon-color icon-pixel-twentyfour cloudclocking-schedule"></span>Schedule
+							</a>
+						</div>
+						<div class="box">
+							<a href="" class="btn-box dropdown-toggle export btn-box-selected" aria-label="export type" title="Export data" data-toggle="dropdown" aria-expanded="true">
+								<i class="icon icon-font icon-pixel-twentyfour cloudclocking-up-load"></i> 
+								<span class="icon icon-font icon-rem-fourteen cloudclocking-down-block-arrow"></span>
+							</a>
+						</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<button class="btn btn-type btn-online">Online</button>
+				    		<button class="btn btn-type btn-offline">Offline</button>
+				    		
+				    		<a href="#" class="btn-box add" data-toggle="modal" data-target="#add">Add</a>
+						<a href="#" class="btn-box del" data-toggle="modal" data-target="#del">Delete</a>
+						<a href="#" class="btn-box edit" data-toggle="modal" data-target="#edit">Edit</a>
+						
+				    		<button type="submit" class="btn btn-block btn-cloudclocking">Login</button>
+				    		
+				    		<a href="#" class="btn btn-small btn-default">
+							<span class="icon icon-color icon-pixel-twentyfour cloudclocking-schedule"></span>Schedule
+						</a>
+						
+						<a href="#" class="btn btn-small btn-danger">Reset</a>
+						<a href="#" class="btn btn-small btn-default">Done</a>
+						<a href="" class="btn-box dropdown-toggle export btn-box-selected" aria-label="export type" title="Export data" data-toggle="dropdown" aria-expanded="true">
+							<i class="icon icon-font icon-pixel-twentyfour cloudclocking-up-load"></i> 
+							<span class="icon icon-font icon-rem-fourteen cloudclocking-down-block-arrow"></span>
+						</a>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>Input</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="box">
+				    			<div class="input-group">
+						    		<input type="email" class="form-control" id="" aria-describedby="" placeholder="Enter email">
+						    </div>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class="input-group">
+					    		<input type="email" class="form-control" id="" aria-describedby="" placeholder="Enter email">
+					    </div>
+				    </xmp>
+				</details>
+				<details>
+				    <summary>CheckBox</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="box">
+				    			<div class="form-check">
+						    		<input type="checkbox" class="form-check-input" id="companyNameTwo">
+						    		<label class="form-check-label" for="companyNameTwo">Philippines Office</label>
+						    </div>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class="form-check">
+					    		<input type="checkbox" class="form-check-input" id="companyNameTwo">
+					    		<label class="form-check-label" for="companyNameTwo">Philippines Office</label>
+					    </div>
+				    </xmp>
+				</details>
+				<details>
+				    <summary>DateTime</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="box">
+				    			<div class='input-group date'>
+			                    <input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="startDate">
+			                </div>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class='input-group date'>
+		                    <input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="startDate">
+		                </div>
+				    </xmp>
+				</details>
+				<details>
+				    <summary>Radio</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="box">
+				    			<div class="form-check">
+						    		<input type="radio" class="form-check-input" id="companyNameTwo">
+						    </div>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class="form-check">
+					    		<input type="radio" class="form-check-input" id="companyNameTwo">
+					    </div>
+				    </xmp>
+				</details>
+				<details>
+				    <summary>复选框 List</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="box">
+				    			<div class="filter">
+				        			<form class="form-record scroll-bar" action="">
+				        				<ul class="filter-list">
+				        					<div class="form-check filter-item filter-active">
+									    		<input type="checkbox" class="form-check-input" id="" checked="checked">
+									    		<label class="form-check-label" for="">CloudClocking</label>
+									    </div>
+									    <div class="form-check filter-item">
+									    		<input type="checkbox" class="form-check-input" id="">
+									    		<label class="form-check-label" for="">Philippines Office</label>
+									    </div>
+				        				</ul>
+				        			</form>
+							</div>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class="box scroll-bar">
+				    			<div class="filter">
+				        			<form class="form-record scroll-bar" action="">
+				        				<ul class="filter-list">
+				        					<div class="form-check filter-item filter-active">
+									    		<input type="checkbox" class="form-check-input" id="" checked="checked">
+									    		<label class="form-check-label" for="">CloudClocking</label>
+									    </div>
+									    <div class="form-check filter-item">
+									    		<input type="checkbox" class="form-check-input" id="">
+									    		<label class="form-check-label" for="">Philippines Office</label>
+									    </div>
+				        				</ul>
+				        			</form>
+							</div>
+				    		</div>
+				    </xmp>
+				</details>
+				<details>
+				    <summary>Media / Card</summary>
+				    <div class="demo scroll-bar">
+			    		<div class="card card-content card-list">
+							<ul class="list-group">
+							  <li class="list-group-item">
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Scott Hughes</h5>
+							  			<span class="user-num">809</span><span class="user-title">CEO</span>
+							  		</div>
+							  	</div>
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">David Bennett</h5>
+							  			<span class="user-num">352</span><span class="user-title">BD Manager</span>
+							  		</div>
+							  	</div>
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">David Bennett</h5>
+							  			<span class="user-num">352</span><span class="user-title">BD Manager</span>
+							  		</div>
+							  	</div>
+							  </li>
+							  <li class="list-group-item">
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Scott Hughes</h5>
+							  			<span class="user-num">809</span><span class="user-title">CEO</span>
+							  		</div>
+							  	</div>
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">David Bennett</h5>
+							  			<span class="user-num">352</span><span class="user-title">BD Manager</span>
+							  		</div>
+							  	</div>
+							  </li>
+							</ul>
+						</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class="card card-content card-list">
+							<ul class="list-group">
+							  <li class="list-group-item">
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Scott Hughes</h5>
+							  			<span class="user-num">809</span>
+							  			<span class="user-title">CEO</span>
+							  		</div>
+							  	</div>
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="">
+							  		<div class="media-body">
+							  			<h5 class="user-name">David Bennett</h5>
+							  			<span class="user-num">352</span>
+							  			<span class="user-title">BD Manager</span>
+							  		</div>
+							  	</div>
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="">
+							  		<div class="media-body">
+							  			<h5 class="user-name">David Bennett</h5>
+							  			<span class="user-num">352</span>
+							  			<span class="user-title">BD Manager</span>
+							  		</div>
+							  	</div>
+							  </li>
+							  <li class="list-group-item">
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Scott Hughes</h5>
+							  			<span class="user-num">809</span>
+							  			<span class="user-title">CEO</span>
+							  		</div>
+							  	</div>
+							  	<div class="media">
+							  		<img class="user-avatar" src="images/64.png" alt="">
+							  		<div class="media-body">
+							  			<h5 class="user-name">David Bennett</h5>
+							  			<span class="user-num">352</span>
+							  			<span class="user-title">BD Manager</span>
+							  		</div>
+							  	</div>
+							  </li>
+							</ul>
+						</div>
+				    </xmp>
+				</details>
+				<details>
+				    <summary>BootstrapTable</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="bootstrap-table scroll-bar">
+							<table id="table" class="table table-hover table-striped scroll-bar"></table>
+						</div>
+				    		<script>
+				    			$(function(){
+				    				searchData();
+				    			});
+				    			function searchData(){
+								var url = 'http://192.168.70.181/cc2018/js/data.json';
+								$.ajax({
+									type: 'get',
+									url:url,
+									dataType: 'json',
+						            contentType: 'application/json; charset=utf-8',
+						            success: function(data) {
+						            		console.log(data);
+						            		var displayData = com.prepareDisplayData(data);
+						            		if(displayData.total > 0){
+											$('#table').bootstrapTable('load', displayData.rows);
+										}else{
+											$('#table').bootstrapTable('load', 'table is not data');
+										}
+						            },
+						            error: function(data) {
+						                console.log('123123');
+						            },
+								});
+								
+								$('#table').bootstrapTable({
+								    pagination: true, //开启分页
+								    search: false, //开启搜索
+								    showColumns: true, //开启自定义列显示
+								    showRefresh: false, //开启刷新
+								    pageSize: 10, //每页显示15条
+								    pageList: [10, 15],
+								    minimumCountColumns: 2, //至少显示2列
+								    clickToSelect: true, //点击选中
+								    columns: [
+								    		{checkbox: true},
+								    		{
+						                    field: 'id',
+						                    title: 'name',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                    field: 'title',
+						                    title: '工号',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                    field: 'link',
+						                    title: '职位',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                    field: 'zwmc',
+						                    title: '组织',
+						                    width: '500',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                    field: 'gsmc',
+						                    title: '日期',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '排班',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '上班',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '下班',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '应到(小时)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '工作时长(小时)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '迟到(分钟)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '早退(分钟)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+						                , {
+						                		field: 'zwyx',
+						                    title: '加班(分钟)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+						                , {
+						                		field: 'zwyx',
+						                    title: '旷工(分钟)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+						                , {
+						                		field: 'zwyx',
+						                    title: '正常(小时)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+						                , {
+						                		field: 'zwyx',
+						                    title: '异常数据',
+						                    width: '10',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+								    ]
+								});
+							};
+							function prepareDisplayData(data){
+								return {
+									total: data.totalCount,
+						            fixedScroll: false,
+						            rows: data.rows
+								}
+							};
+				    		</script>
+				    </div>
+				    <xmp data-lang="HTML">
+					    	<div class="bootstrap-table scroll-bar">
+							<table id="table" class="table table-hover table-striped scroll-bar"></table>
+						</div>
+						
+						<script type="text/javascript">
+				    			$(function(){
+				    				searchData();
+				    			});
+				    			function searchData(){
+								var url = 'http://192.168.70.181/cc2018/js/data.json';
+								$.ajax({
+									type: 'get',
+									url:url,
+									dataType: 'json',
+						            contentType: 'application/json; charset=utf-8',
+						            success: function(data) {
+						            		console.log(data);
+						            		var displayData = com.prepareDisplayData(data);
+						            		if(displayData.total > 0){
+											$('#table').bootstrapTable('load', displayData.rows);
+										}else{
+											$('#table').bootstrapTable('load', 'table is not data');
+										}
+						            },
+						            error: function(data) {
+						                console.log('123123');
+						            },
+								});
+								
+								$('#table').bootstrapTable({
+								    pagination: true, //开启分页
+								    search: false, //开启搜索
+								    showColumns: true, //开启自定义列显示
+								    showRefresh: false, //开启刷新
+								    pageSize: 10, //每页显示15条
+								    pageList: [10, 15],
+								    minimumCountColumns: 2, //至少显示2列
+								    clickToSelect: true, //点击选中
+								    columns: [
+								    		{checkbox: true},
+								    		{
+						                    field: 'id',
+						                    title: 'name',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                    field: 'title',
+						                    title: '工号',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                    field: 'link',
+						                    title: '职位',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                    field: 'zwmc',
+						                    title: '组织',
+						                    width: '500',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                    field: 'gsmc',
+						                    title: '日期',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '排班',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '上班',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '下班',
+						                    width: '50',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '应到(小时)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '工作时长(小时)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '迟到(分钟)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }, {
+						                		field: 'zwyx',
+						                    title: '早退(分钟)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+						                , {
+						                		field: 'zwyx',
+						                    title: '加班(分钟)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+						                , {
+						                		field: 'zwyx',
+						                    title: '旷工(分钟)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+						                , {
+						                		field: 'zwyx',
+						                    title: '正常(小时)',
+						                    width: '100',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+						                , {
+						                		field: 'zwyx',
+						                    title: '异常数据',
+						                    width: '10',
+						                    align: 'center',
+						                    valign: 'middle'
+						                }
+								    ]
+								});
+							};
+							function prepareDisplayData(data){
+								return {
+									total: data.totalCount,
+						            fixedScroll: false,
+						            rows: data.rows
+								}
+							};
+				    		</script>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>Breadcrumb</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="breadcrumb">
+							<div class="breadcrumb-title">Employee</div>
+							<div class="breadcrumb-num">152</div>
+						</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class="breadcrumb">
+							<div class="breadcrumb-title">All organizations</div>
+						</div>
+						
+						<div class="breadcrumb">
+							<div class="breadcrumb-title">Employee</div>
+							<div class="breadcrumb-num">152</div>
+						</div>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>树型菜单 / 树型结构</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="box">
+				    			<form class="scroll-bar" action="">
+			        				<div id="tree"></div>
+			        			</form>
+			        			<script>
+			        				$(function(){
+			        					getTree();
+			        				});
+			        				function getTree(){
+									var url = 'http://192.168.70.181/cc2018/js/tree.json';
+									$.ajax({
+										type:"get",
+										url:url,
+										dataType: 'json',
+							            contentType: 'application/json; charset=utf-8',
+							            success: function(data) {
+							            		console.log(data);
+							            		$('#tree').treeview({
+							            			levels: 1,
+							            			data:data,
+												selectedBackColor: 'rgba(#000000,.12)'
+							            		});
+							            }
+									});
+								}
+			        			</script>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div id="tree"></div>
+				    		
+				    		说明：
+		        			1. 点击选中
+		        			2. 依赖 
+		        			<link href="//cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet">
+		        			<script src="//cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+				    		
+				    		<script>
+		        				$(function(){
+		        					getTree();
+		        				});
+		        				function getTree(){
+								var url = 'http://192.168.70.181/cc2018/js/tree.json';
+								$.ajax({
+									type:"get",
+									url:url,
+									dataType: 'json',
+						            contentType: 'application/json; charset=utf-8',
+						            success: function(data) {
+						            		console.log(data);
+						            		$('#tree').treeview({
+						            			levels: 1,
+						            			data:data,
+											selectedBackColor: 'rgba(#000000,.12)'
+						            		});
+						            }
+								});
+							}
+		        			</script>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>Tel</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="content-pannel">
+				    			<div class="content-pannel-details">
+				    				<div class="breadcrumb">
+									<div class="breadcrumb-title">Tel</div>
+								</div>
+								<div class="card card-name">+1 325 425 1324</div>
+				    			</div>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<div class="content-pannel">
+				    			<div class="content-pannel-details">
+				    				<div class="breadcrumb">
+									<div class="breadcrumb-title">Tel</div>
+								</div>
+								<div class="card card-name">+1 325 425 1324</div>
+				    			</div>
+				    		</div>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>单选框 List</summary>
+				    <div class="demo">
+				    		<ul class="filter-list radio">
+				    			<div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameOne">
+						    		<div class="media" for="companyNameOne">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Scott Hughes</h5>
+							  			<span class="user-num">809</span>
+							  		</div>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameOne">
+						    		<div class="media" for="companyNameOne">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Scott Hughes</h5>
+							  			<span class="user-num">809</span>
+							  		</div>
+							  	</div>
+						    </div>
+				    		</ul>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		<ul class="filter-list radio">
+				    			<div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameOne">
+						    		<div class="media" for="companyNameOne">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Scott Hughes</h5>
+							  			<span class="user-num">809</span>
+							  		</div>
+							  	</div>
+						    </div>
+						    <div class="form-check filter-item">
+						    		<input type="radio" class="form-check-input" id="companyNameOne">
+						    		<div class="media" for="companyNameOne">
+							  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+							  		<div class="media-body">
+							  			<h5 class="user-name">Scott Hughes</h5>
+							  			<span class="user-num">809</span>
+							  		</div>
+							  	</div>
+						    </div>
+				    		</ul>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>employee-List</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="employee">
+				    			<div class="list-group">
+								<div class="list-group-item">
+									<p class="item-sub-title">Employee No.</p>
+									<h5 class="item-title">809</h5>
+								</div>
+								<div class="list-group-item">
+									<p class="item-sub-title">Email</p>
+									<h5 class="item-title">scott.hughes@clouldclocking.com</h5>
+								</div>
+								<div class="list-group-item">
+									<p class="item-sub-title">Tel</p>
+									<h5 class="item-title">+1 321 442 6381</h5>
+								</div>
+								<div class="list-group-item">
+									<p class="item-sub-title">Position</p>
+									<h5 class="item-title">Designer</h5>
+								</div>
+								<div class="list-group-item">
+									<p class="item-sub-title">Date of Hire</p>
+									<h5 class="item-title">12/3/2013</h5>
+								</div>
+								<div class="list-group-item">
+									<p class="item-sub-title">Department</p>
+									<h5 class="item-title">Marketing</h5>
+								</div>
+							</div>
+							<div class="breadcrumb">
+								<div class="breadcrumb-title">Attendance</div>
+							</div>
+							<div class="list-group employee">
+								<div class="list-group-item">
+									<p class="item-sub-title">Employee No.</p>
+									<h5 class="item-title">809</h5>
+								</div>
+							</div>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		说明：
+				    		1. list-group-item 分多种情况，当前它的父级是 employee
+				    		2. 多个列表使用 breadcrumb 分离
+				    		
+				    		<div class="list-group employee">
+							<div class="list-group-item">
+								<p class="item-sub-title">Employee No.</p>
+								<h5 class="item-title">809</h5>
+							</div>
+							<div class="list-group-item">
+								<p class="item-sub-title">Email</p>
+								<h5 class="item-title">scott.hughes@clouldclocking.com</h5>
+							</div>
+							<div class="list-group-item">
+								<p class="item-sub-title">Tel</p>
+								<h5 class="item-title">+1 321 442 6381</h5>
+							</div>
+						</div>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>device-List</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="box device">
+				    			<div class="filter-list">
+					    			<div class="form-check filter-item filter-active">
+							    		<input type="radio" class="form-check-input" id="companyNameOne" checked="checked">
+							    		<div class="media" for="companyNameOne">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">Stockon(CC3)</h5>
+								  			<span class="user-num">Stockton office marketing</span>
+								  		</div>
+								  	</div>
+								  	<button class="btn btn-type btn-online">Online</button>
+							    </div>
+							    <div class="form-check Offline filter-item">
+							    		<input type="radio" class="form-check-input" id="companyNameFour">
+							    		<div class="media">
+								  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">CC5</h5>
+								  			<span class="user-num">St. Paul</span>
+								  		</div>
+								  		<button class="btn btn-type btn-offline">Offline</button>
+								  	</div>
+							    </div>
+							    <div class="form-check filter-item">
+							    		<input type="radio" class="form-check-input" id="companyNameThree">
+							    		<div class="media">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">CC5</h5>
+								  			<span class="user-num">St. Paul</span>
+								  		</div>
+								  		<button class="btn btn-type btn-online">Online</button>
+								  	</div>
+							    </div>
+					    		</div>
+				    		</div>
+				    </div>
+				    <xmp data-lang="HTML">
+				    		说明：
+				    		1. list-group-item 分多种情况，不同的父级不同的显示方式，当前它的父级是 device
+				    		2. 多个列表使用 breadcrumb 分离
+				    		
+				    		<div class="device">
+				    			<div class="filter-list">
+					    			<div class="form-check filter-item filter-active">
+							    		<input type="radio" class="form-check-input" id="companyNameOne" checked="checked">
+							    		<div class="media" for="companyNameOne">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">Stockon(CC3)</h5>
+								  			<span class="user-num">Stockton office marketing</span>
+								  		</div>
+								  	</div>
+								  	<button class="btn btn-type btn-online">Online</button>
+							    </div>
+							    <div class="form-check Offline filter-item">
+							    		<input type="radio" class="form-check-input" id="companyNameFour">
+							    		<div class="media">
+								  		<img class="user-avatar" src="images/64.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">CC5</h5>
+								  			<span class="user-num">St. Paul</span>
+								  		</div>
+								  		<button class="btn btn-type btn-offline">Offline</button>
+								  	</div>
+							    </div>
+							    <div class="form-check filter-item">
+							    		<input type="radio" class="form-check-input" id="companyNameThree">
+							    		<div class="media">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">CC5</h5>
+								  			<span class="user-num">St. Paul</span>
+								  		</div>
+								  		<button class="btn btn-type btn-online">Online</button>
+								  	</div>
+							    </div>
+					    		</div>
+				    		</div>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>device 在线设备</summary>
+				    <div class="demo scroll-bar">
+			    			<div class="box device">
+			    				<div class="filter-list">
+					    			<div class="form-check filter-item filter-active">
+							    		<input type="radio" class="form-check-input" id="companyNameOne" checked="checked">
+							    		<div class="media" for="companyNameOne">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">Stockon(CC3)</h5>
+								  			<span class="user-num">Stockton office</span>
+								  		</div>
+								  	</div>
+								  	<button class="btn btn-type btn-online">Online</button>
+							    </div>
+							    <div class="form-check filter-item">
+							    		<input type="radio" class="form-check-input" id="companyNameTwo">
+							    		<div class="media">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">CC5</h5>
+								  			<span class="user-num">Bakersfield office BD</span>
+								  		</div>
+								  		<button class="btn btn-type btn-online">Online</button>
+								  	</div>
+							    </div>
+							</div>
+			    			</div>
+			    		</div>
+				    <xmp data-lang="HTML">
+				    	说明：
+				    		1. list-group-item 分多种情况，不同的父级不同的显示方式，当前它的父级是 device
+				    		2. 在线状态 filter-item 不添加其它 class ,按钮为 btn-online
+				    		
+				    		<div class="device">
+				    			<div class="filter-list">
+				    				<div class="form-check filter-item filter-active">
+							    		<input type="radio" class="form-check-input" id="companyNameOne" checked="checked">
+							    		<div class="media" for="companyNameOne">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">Stockon(CC3)</h5>
+								  			<span class="user-num">Stockton office</span>
+								  		</div>
+								  	</div>
+								  	<button class="btn btn-type btn-online">Online</button>
+							    </div>
+				    			</div>
+				    		</div>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>device 头部</summary>
+				    <div class="demo scroll-bar">
+				    		<div class="device">
+				    			<div class="content-pannel-header">
+								<div class="left">
+									<figure class="avatar">
+										<img src="images/110-pro.png" alt="" class="avatar">
+									</figure>
+									<div class="info">
+										<h1 class="header-title">Stockon(CC3)</h1>
+										<p class="header-des email">Stockton office marketing</p>
+										<button class="btn btn-type btn-online">Online</button>
+									</div>
+								</div>
+								<div class="right">
+									<a href="#" class="btn btn-small btn-default"><span class="icon icon-color icon-pixel-twentyfour cloudclocking-schedule"></span>User</a>
+									<a href="#" class="btn btn-small btn-default"><span class="icon icon-color icon-pixel-twentyfour cloudclocking-record"></span>Record</a>
+								</div>
+							</div>
+				    		</div>
+			    			
+			    		</div>
+				    <xmp data-lang="HTML">
+				    	说明：
+				    		1. content-pannel-header 分多种情况，不同的父级不同的显示方式，当前它的父级是 device
+				    		2. 离线状态 filter-item 同级添加 Offline class,按钮为 btn-offline
+				    		
+				    		<div class="device">
+				    			<div class="filter-list">
+				    				<div class="form-check Offline filter-item filter-active">
+							    		<input type="radio" class="form-check-input" id="companyNameOne" checked="checked">
+							    		<div class="media" for="companyNameOne">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">Stockon(CC3)</h5>
+								  			<span class="user-num">Stockton office</span>
+								  		</div>
+								  	</div>
+								  	<button class="btn btn-type btn-offline">Offline</button>
+							    </div>
+				    			</div>
+				    		</div>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>device 离线设备</summary>
+				    <div class="demo scroll-bar">
+			    			<div class="box device">
+			    				<div class="filter-list">
+					    			<div class="form-check Offline filter-item filter-active">
+							    		<input type="radio" class="form-check-input" id="companyNameOne" checked="checked">
+							    		<div class="media" for="companyNameOne">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">Stockon(CC3)</h5>
+								  			<span class="user-num">Stockton office</span>
+								  		</div>
+								  	</div>
+								  	<button class="btn btn-type btn-offline">Offline</button>
+							    </div>
+							    <div class="form-check Offline filter-item">
+							    		<input type="radio" class="form-check-input" id="companyNameTwo">
+							    		<div class="media">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">CC5</h5>
+								  			<span class="user-num">Bakersfield office BD</span>
+								  		</div>
+								  		<button class="btn btn-type btn-offline">Offline</button>
+								  	</div>
+							    </div>
+							</div>
+			    			</div>
+			    		</div>
+				    <xmp data-lang="HTML">
+				    	说明：
+				    		1. list-group-item 分多种情况，不同的父级不同的显示方式，当前它的父级是 device
+				    		2. 离线状态 filter-item 同级添加 Offline class,按钮为 btn-offline
+				    		
+				    		<div class="device">
+				    			<div class="filter-list">
+				    				<div class="form-check Offline filter-item filter-active">
+							    		<input type="radio" class="form-check-input" id="companyNameOne" checked="checked">
+							    		<div class="media" for="companyNameOne">
+								  		<img class="user-avatar" src="images/64-pro.png" alt="Generic placeholder image">
+								  		<div class="media-body">
+								  			<h5 class="user-name">Stockon(CC3)</h5>
+								  			<span class="user-num">Stockton office</span>
+								  		</div>
+								  	</div>
+								  	<button class="btn btn-type btn-offline">Offline</button>
+							    </div>
+				    			</div>
+				    		</div>
+				    	</xmp>
+				</details>
+				<details>
+				    <summary>search bar</summary>
+				    <div class="demo scroll-bar">
+			    			<div class="box">
+			    				<div class="filter">
+			    					<div class="search filter-header">
+									<form action="">
+										<div class="input-group-prepend">
+											<div class="empty-btn"><span class="icon"></span></div>
+											<input type="text" class="form-control filter-input">
+											<div class="search-bar">
+												<span class="icon icon-search cloudclocking-search"></span>
+												<span class="search-title">Search</span>
+											</div>
+											<div class="empty-btn filter-btn "><span class="icon cloudclocking-filter"></span></div>
+										</div>
+									</form>
+									<!--筛选-->
+									<div class="filter-pannel">
+										<div class="filter-pannel-header">
+											<div class="filter-close icon icon-color cloudclocking-error" style="height: 40px; opacity: 1;"></div>
+										</div>
+										<div class="filter-pannel-content">
+											<div class="filter-date">
+												<div class="breadcrumb-title">Select Date Range</div>
+												<div class="input-group date">
+													<input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="startDate" placeholder="Name, Job number">
+													<span class="input-range"> ~ </span>
+													<input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="endDate" placeholder="Name, Job number">
+												</div>
+											</div>
+											<div class="filter-bottm">
+												<a href="#" class="btn btn-small btn-danger">Reset</a>
+												<a href="#" class="btn btn-small btn-default">Done</a>
+											</div>
+										</div>
+									</div>
+								</div>
+			    				</div>
+			    			</div>
+			    		</div>
+				    <xmp data-lang="HTML">
+				    		<div class="filter">
+		    					<div class="search filter-header">
+								<form action="">
+									<div class="input-group-prepend">
+										<div class="empty-btn"><span class="icon"></span></div>
+										<input type="text" class="form-control filter-input">
+										<div class="search-bar">
+											<span class="icon icon-search cloudclocking-search"></span>
+											<span class="search-title">Search</span>
+										</div>
+										<div class="empty-btn filter-btn ">
+											<span class="icon cloudclocking-filter"></span>
+										</div>
+									</div>
+								</form>
+								<!--筛选-->
+								<div class="filter-pannel">
+									<div class="filter-pannel-header">
+										<div class="filter-close icon icon-color cloudclocking-error" style="height: 40px; opacity: 1;"></div>
+									</div>
+									<div class="filter-pannel-content">
+										<div class="filter-date">
+											<div class="breadcrumb-title">Select Date Range</div>
+											<div class="input-group date">
+												<input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="startDate" placeholder="Name, Job number">
+												<span class="input-range"> ~ </span>
+												<input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="endDate" placeholder="Name, Job number">
+											</div>
+										</div>
+										<div class="filter-bottm">
+											<a href="#" class="btn btn-small btn-danger">Reset</a>
+											<a href="#" class="btn btn-small btn-default">Done</a>
+										</div>
+									</div>
+								</div>
+							</div>
+		    				</div>
+				    	</xmp>
+				</details>
+			</div>
+		</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+    <script src="js/common/bootstrap-datetimepicker.js"></script>
+  	<script src="js/common/com.js"></script>
+  </body>
+</html>

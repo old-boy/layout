@@ -1,0 +1,84 @@
+@charset 'utf-8';
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none;//去掉原有的样式
+    display:inline-block;
+    width:$checkbox-w;
+    height:$checkbox-w;
+    vertical-align:middle;
+    background-color: $black-opacity-sixteen;
+    border: $border-width solid $white-opacity-fifteen;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor:pointer;
+    position: relative;
+    &:focus,
+    &:hover
+    {
+        border: $border-width solid $white-opacity-twentyfour;
+        transition: $transition-base;
+    }
+    &:checked{
+        border-color: $white-opacity-twentyfour;
+        &:before{
+            content: '\2713';
+            color: $white-opacity-eight;
+            display: block;
+            position: relative;
+            top: -3px;
+            left: 2px;
+        }
+    }
+}
+input[type="checkbox"] + label {
+    color: $white-opacity-seventy;
+    font-weight: $font-weight-light;
+    cursor:pointer;
+    &:hover{
+        color: $white-opacity-thirtysix;
+    }
+}
+input[type="checkbox"] + label {
+    color: $white-opacity-seventy ;
+}
+input[type="checkbox"]:checked + label{
+    cursor:pointer;
+}
+input:checked{
+    background: $black-opacity-fourtyfive;
+}
+label{
+    &::-webkit-selection{
+        background: $white-opacity-ten;
+    }
+    &::-moz-selection{
+        background: $white-opacity-ten;
+    }
+    &::selection{
+        background: $white-opacity-ten;
+    }
+}
+
+/*bootstrap table checkbox*/
+.bs-checkbox,.columns {
+    input[type="checkbox"]{
+        &:checked{
+            border-color: $white-opacity-twentyfour;
+            &:before{
+                content: '\2713';
+                color: $white-opacity-eight;
+                display: block;
+                position: relative;
+                top: -3px;
+                left: 2px;
+            }
+        }
+    }
+}
+.form-check-input{
+    margin-top: 0;
+}
+/*form-group checkbox*/
+
+

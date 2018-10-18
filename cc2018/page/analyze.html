@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9, IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta property="og:type" content="website">
+		<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css" rel="stylesheet">
+	    <link href="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet">
+	    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/font.css" />
+		<link rel="stylesheet" type="text/css" href="../css/management.css" />
+		<link href="../images/ico.ico" rel="icon" type="image/x-icon">
+		<title>Analyze</title>
+	</head>
+
+	<body class="container-fluid default-bg normal-padding">
+		<div class="main">
+			<div class="sidebar scroll-bar">
+				<div class="item-sidebar logo">
+					<span class="icon icon-rem-thirtysix logo-color cloudclocking-logo"></span>
+					<span class="icon icon-rem-twenty logo-color cloudclocking-logo-title"></span>
+				</div>
+				<div class="menu-list">
+					<div class="item">
+						<a href="#" class="record a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-dashboard"></span><span class="menu-info">Dashboard</span></a>
+					</div>
+				</div>
+				<div class="dividing-line">
+					<div class="dividing-bolck">Data</div>
+					<div class="line"></div>
+				</div>
+				<div class="menu-list">
+					<div class="item">
+						<a href="record.html" class="record a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-record"></span><span class="menu-info">Record</span></a>
+					</div>
+					<div class="item active">
+						<a href="#" class="analyze a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-analyze"></span><span class="menu-info">Analyze</span></a>
+					</div>
+					<div class="item">
+						<a href="department.html" class="department a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-department"></span><span class="menu-info">Department</span></a>
+					</div>
+					<div class="item">
+						<a href="employee.html" class="employee a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-employee"></span><span class="menu-info">Employee</span></a>
+					</div>
+					<div class="item">
+						<a href="device.html" class="device a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-device"></span><span class="menu-info">Device</span></a>
+					</div>
+				</div>
+				<div class="dividing-line">
+					<div class="dividing-bolck">Rules</div>
+					<div class="line"></div>
+				</div>
+				<div class="menu-list">
+					<div class="item">
+						<a href="#" class="shift a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-shift"></span><span class="menu-info">Shift</span></a>
+					</div>
+					<div class="item">
+						<a href="#" class="schedule a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-schedule"></span><span class="menu-info">Schedule</span></a>
+					</div>
+					<div class="item">
+						<a href="#" class="access-rules a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-access-rules"></span><span class="menu-info">Access Rules</span></a>
+					</div>
+					<div class="item">
+						<a href="#" class="time-group a-link"><span class="icon icon-font icon-rem-twentyfour cloudclocking-time-group"></span><span class="menu-info">Time Group</span></a>
+					</div>
+				</div>
+				<div class="item-sidebar certification">
+					<span class="icon icon-font icon-rem-twentyfour cloudclocking-nav"></span>
+				</div>
+			</div>
+			<div class="content">
+				<div class="header">
+					<div class="back"></div>
+					<h2 class="content-title">Record</h2>
+					<!--用户信息/修改密码/退出等-->
+					<div class="user-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account">
+						<div class="user-avatar"><img src="../images/cloudclocking-logo.png" alt="" class="avatar-pic" /></div>
+						<h2 class="user-name">cloudclocking</h2>
+					</div>
+					<ul class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="account">
+						<li class="dropdown-item">
+							<a class="dropdown-link" href="javascript:;">Change Password</a>
+						</li>
+						<li class="dropdown-item">
+							<a class="dropdown-link" href="javascript:;">Log Out</a>
+						</li>
+					</ul>
+				</div>
+				<div class="box analyze">
+					<div class="filter">
+						<div class="search filter-header">
+							<form action="">
+								<div class="input-group-prepend">
+									<div class="empty-btn"><span class="icon"></span></div>
+									<input type="text" class="form-control filter-input">
+									<div class="search-bar">
+										<span class="icon icon-search cloudclocking-search"></span>
+										<span class="search-title">Search</span>
+									</div>
+									<div class="empty-btn filter-btn "><span class="icon cloudclocking-filter"></span></div>
+								</div>
+							</form>
+						</div>
+						<div class="search-pannel search-bg"></div>
+						<!--搜索记录列表-->
+						<ul class="record-list">
+							<a href="#" class="item-record">Organization management</a>
+							<a href="#" class="item-record">Scheduling management</a>
+							<a href="#" class="item-record">Record management</a>
+							<a href="#" class="item-record">Statistical report</a>
+						</ul>
+						<!--筛选列表-->
+						<form class="form-record scroll-bar" action="">
+							<ul class="filter-list">
+								<div class="breadcrumb">
+									<div class="breadcrumb-title">All organizations</div>
+								</div>
+								<div class="form-check filter-item filter-active">
+									<input type="checkbox" class="form-check-input" id="companyNameOne" checked="checked">
+									<label class="form-check-label" for="companyNameOne">CloudClocking</label>
+								</div>
+								<div class="form-check filter-item">
+									<input type="checkbox" class="form-check-input" id="companyNameTwo">
+									<label class="form-check-label" for="companyNameTwo">Philippines Office</label>
+								</div>
+								<div class="form-check filter-item">
+									<input type="checkbox" class="form-check-input" id="companyNameThree">
+									<label class="form-check-label" for="companyNameThree">Beijing Office</label>
+								</div>
+								<div class="form-check filter-item">
+									<input type="checkbox" class="form-check-input" id="companyNameFour">
+									<label class="form-check-label" for="companyNameFour">Canada Office</label>
+								</div>
+								<div class="form-check filter-item">
+									<input type="checkbox" class="form-check-input" id="companyNameTwo">
+									<label class="form-check-label" for="companyNameTwo">Philippines Office</label>
+								</div>
+								<div class="form-check filter-item">
+									<input type="checkbox" class="form-check-input" id="companyNameThree">
+									<label class="form-check-label" for="companyNameThree">Beijing Office</label>
+								</div>
+								<div class="form-check filter-item">
+									<input type="checkbox" class="form-check-input" id="companyNameFour">
+									<label class="form-check-label" for="companyNameFour">Canada Office</label>
+								</div>
+							</ul>
+						</form>
+						<!--筛选面板-->
+						<div class="filter-pannel">
+							<div class="filter-pannel-header">
+								<div class="filter-close icon icon-color cloudclocking-error"></div>
+							</div>
+							<div class="filter-pannel-content">
+								<div class="filter-date">
+									<div class="breadcrumb-title">Select Date Range</div>
+									<div class='input-group date'>
+										<input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="startDate">
+										<span class="input-range"> ~ </span>
+										<input type="text" size="16" class="form-control filter-input" value="2012-05-15" id="endDate">
+									</div>
+								</div>
+								<div class="filter-bottm">
+									<a href="#" class="btn btn-small btn-danger">Reset</a>
+									<a href="#" class="btn btn-small btn-default">Done</a>
+								</div>
+							</div>
+						</div>
+						<!--搜索/筛选 btn,可选功能，部分页面需要添加-->
+						<!--<div class="filter-bottm">
+	        				<a href="#" class="btn-small btn-danger">Delete</a>
+						<a href="#" class="btn-small btn-default">Modify</a>
+	        			</div>-->
+					</div>
+					<div class="filter-content">
+						<!--content添加/新增/修改/导出，可选功能，部分页面需要添加-->
+						<div class="content-header">
+						<div class="left"></div>
+						<div class="right">
+							<a href="" class="btn-box dropdown-toggle export" aria-label="export type" title="Export data" data-toggle="dropdown">
+								<i class="icon icon-font cloudclocking-up-load"></i> 
+								<span class="icon caret"></span>
+							</a>
+							<ul class="dropdown-menu scroll-bar" role="menu">
+								<li class="report-type" role="menuitem" data-type="1">
+									<a href="javascript:void(0)">当前数据统计表</a>
+								</li>
+								<li class="report-type" role="menuitem" data-type="2">
+									<a href="javascript:void(0)">考勤记录流水</a>
+								</li>
+								<li class="report-type" role="menuitem" data-type="3">
+									<a href="javascript:void(0)">月度考勤汇总</a>
+								</li>
+								<li class="report-type" role="menuitem" data-type="4">
+									<a href="javascript:void(0)">考勤异常报表</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+						<div class="content-pannel">
+							<div class="content-pannel-header">
+								<h1 class="header-title">CloudClocking</h1>
+								<p class="header-des">2nd Floor, 3669 Jindu Road, Shanghai, China 201108</p>
+							</div>
+							<div class="content-pannel-details">
+								<div class="breadcrumb">
+									<div class="breadcrumb-title">Employee</div>
+									<div class="breadcrumb-num">152</div>
+								</div>
+								<div class="bootstrap-table scroll-bar">
+									<table id="table" class="table table-hover table-striped scroll-bar"></table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="box-bottom">
+						<a href="#" class="question"><span class="icon icon-font icon-rem-twentyfour cloudclocking-help"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+    <script src="../js/common/bootstrap-datetimepicker.js"></script>
+		<script src="../js/common/com.js"></script>
+	</body>
+
+</html>

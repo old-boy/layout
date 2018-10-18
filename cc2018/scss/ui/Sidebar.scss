@@ -1,0 +1,195 @@
+@charset 'utf-8';
+@import 'ui/Tansnsiton';
+.sidebar {
+    width: 18vw;
+    height: 100vh;
+    min-height: 1vh;
+    min-width: $sidebar-w;
+    background: $black-opacity-three;
+    overflow-x: hidden;
+    overflow-y: auto;
+    float: left;
+    box-shadow: -30px 0 50px $black-opacity-twelve inset;
+    position: relative;
+    @extend .hover-transition;
+    @media (max-width: 850px) {
+        min-width: 50px;
+        width: 1vw;
+        transition: $transition-base;
+        .menu-info {
+            display: none;
+        }
+    }
+    .item-sidebar {
+        padding: 0 1em;
+        @media (max-width: 850px) {
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .logo {
+        height: 10vh;
+        line-height: 10vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        span {
+            @media (max-width: 850px) {
+                &:first-child {
+                    font-size: 50px;
+                }
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+    .certification {
+        width: 231px;
+        height: 50px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+        @media (max-width: 850px) {
+            width: auto;
+            height: initial;
+            position: fixed;
+            left: -6px;
+            .icon {
+                font-size: 30px;
+            }
+        }
+        .icon {
+            line-height: 5vh;
+        }
+    }
+    .dividing-line {
+        height: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        @media (max-width: 850px) {
+            display: none;
+        }
+        .dividing-bolck {
+            width: 50px;
+            height: 30px;
+            color: $white-opacity-twentyfour;
+            font-size: $pixel-fourteen;
+            font-weight: $font-weight-light;
+            text-align: center;
+            line-height: 30px;
+        }
+        .line {
+            border: 1px solid $white-opacity-fifteen;
+            width: 98%;
+        }
+    }
+    .menu-list {
+        height: auto;
+        margin: 20px 0;
+        .item {
+            height: 5vh;
+            padding: 0 1em;
+            cursor: pointer;
+            @extend .icon-r10;
+            @extend .a-link;
+            @media (max-width: 850px) {
+                padding: 15px;
+            }
+            &:hover {
+                @extend .active;
+            }
+        }
+    }
+}
+
+.a-link {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: $white-opacity-seventy;
+    text-decoration: none;
+    font-weight: $font-weight-light;
+    @media (max-width: 850px) {
+        display: flex;
+        justify-content: center;
+        transition: $transition-base;
+        .icon-rem-twentyfour {
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+    @extend .aa;
+    .icon {
+        padding-right: 15px;
+        @media (max-width: 850px) {
+            padding-right: 0;
+        }
+    }
+}
+
+.active {
+    background: linear-gradient(to right, #ea6003, #ea6003, #a24303);
+    transition: $transition-base;
+    color: $white !important;
+}
+
+//收缩菜单
+.shrink-list {
+    height: auto;
+    margin: 20px 0;
+    .shrink-item {
+        width: 100%;
+        height: auto;
+        .main-menu {
+            height: 5vh;
+            display: flex;
+            align-items: center;
+            padding: 0 1em;
+            text-decoration: none;
+            color: $white-opacity-seventy;
+            .icon{
+                padding-right: 15px;
+                &:last-child{
+                    padding-left: 8vw;
+                }
+            }
+            &:hover {
+                @extend .active;
+            }
+        }
+        .sub-menu {
+            display: none;
+            width: 100%;
+            height: auto;
+            background: $black-opacity-ten;
+            .sub-item {
+                height: 4hv;
+                max-height: 5vh;
+                .sub-menu-link {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 1em 1em 1em 3em;
+                    text-decoration: none;
+                    color: $white-opacity-thirtysix;
+                    line-height: 1;
+                    &:hover{
+                        background: $black-opacity-twelve;
+                        color: $white-opacity-eight;
+                        transition: $transition-base;
+                    }
+                }
+            }
+            @media (max-width: 768px){
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+.modal{
+    z-index: 999;
+    .modal-content{
+        background-color: $light-gray;
+        border-radius: .5rem;
+        .modal-header{
+            padding: .5rem;
+            border-bottom: $border;
+            .modal-title{
+                font-size: $pixel-twenty;
+                font-weight: $font-weight-mid;
+                color: $black-opacity-seventy;
+                line-height: $line-height-base + 0.5;
+            }
+            .close{
+                span[aria-hidden="true"]{
+                    font-weight: $font-weight-light;
+                }
+            }
+        }
+        .modal-body{}
+        .modal-footer{
+            padding: .5rem;
+            border-top: $border;
+        }
+    }
+}

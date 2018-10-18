@@ -1,0 +1,88 @@
+@charset 'utf-8';
+@import 'common';
+
+#warp{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    max-width: 1440px;
+    display: block;
+    margin: auto;
+    .row{
+        zoom: 1;
+        position: relative;
+        margin: auto;
+        max-width: calc(1440px + (6vw * 2));
+        padding-left: 0;
+        padding-right: 0;
+        &:before{
+            content: '';
+            display: table;
+        }
+    }
+    .search-warp{
+        margin-top: 7.5em;
+        margin-bottom: 4.5em;
+        
+    }
+    .help-warp{
+        margin-bottom: 6em;
+        min-height: 43.75em;
+        background: $fff;
+        border-radius: 4px;
+        box-shadow: $show;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 66.25em;
+    }
+    .language{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 10vw;
+        height: 40px;
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: inherit;
+        color: $fff;
+        cursor: pointer;
+        transition: all .3s ease-in;
+        @media (max-width: 720px){
+            width: 28vw;
+        }
+        @media (min-width:721px){
+            width: 10vw;
+        }
+        option{
+            padding: 4px 6px !important;
+            background-color: $main-hover;
+             border-color: transparent;
+            border: none;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            &:hover{
+                background-color: $main-select !important;
+                color: $f2f2f2;
+            }
+        }
+    }
+}
+
+/**
+  * 动画类名，直接使用
+  * 闪  .fadeIn  
+  * 消失  .fadeOut
+  * 由上至下, 缓慢移动  .fadeInDown
+  * 由下至上, 缓慢移动  .fadeInUp
+  * 由左至右，缓慢移动  .fadeInLeft
+  * 由右至左，缓慢移动  .fadeInRight
+  * 
+  * 由左至右，滑动  .slideInLeft ,相反  .slideInRight
+  * 由上至下，滑动  .slideInDown
+  * 
+ */
+
+
+
+

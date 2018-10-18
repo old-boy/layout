@@ -1,0 +1,137 @@
+@charset 'utf-8';
+
+$light-gray: rgba(#6B6B6B,1) !default;
+$dark-gray: rgba(#393939,1) !default;
+//$body-default-color: rgba(#FF6701,.1) !default;
+$body-default-color: rgba(32, 41, 58, 0.45) !default;
+$filter-pannel-color: rgba(69,74,82, 1) !default;
+
+$icon: rgba(#FFFFFF,1) !default;
+$selected: rgba(#FF6701,1) !default;
+$logo: rgba(#FF6701,1) !default;
+$logo-hover: rgba(#ea6003,1) !default;
+$slider-hover: rgba(#a24303,1) !default;
+$scrollbar: rgba(#000000,.24) !default;
+$scrollbar-bg: rgba(#FFFFFF,.08) !default;
+$input-border: rgba(#979797,1) !default;
+$border-color: rgba(236, 238, 239, .2);
+
+$black: rgba(#000000,1) !default;
+$black-opacity-seventy: rgba(#000000,.7) !default;
+$black-opacity-four: rgba(#000000,.4) !default;
+$black-opacity-three: rgba(#000000,.3) !default;
+$black-opacity-fourtyfive: rgba(#000000,.45) !default;
+$black-opacity-twentyfour: rgba(#000000,.24) !default;
+$black-opacity-sixteen: rgba(#000000,.16) !default;
+$black-opacity-fifteen: rgba(#000000,.15) !default;
+$black-opacity-thirteen: rgba(#000000,.13) !default;
+$black-opacity-twelve: rgba(#000000,.12) !default;
+$black-opacity-ten: rgba(#000000,.1) !default;
+$black-opacity-eight: rgba(#000000,.08) !default;
+$black-opacity-five: rgba(#9B9B9B,.05) !default;
+
+$white: rgba(#FFFFFF,1) !default;
+$white-opacity-eight: rgba(#FFFFFF,.8) !default;
+$white-opacity-seventy: rgba(#FFFFFF,.7) !default;
+$white-opacity-thirtysix: rgba(#FFFFFF,.36) !default;
+$white-opacity-twentyfour: rgba(#FFFFFF,.24) !default;
+$white-opacity-fifteen: rgba(#FFFFFF,.15) !default;
+$white-opacity-twelve: rgba(#FFFFFF,.12) !default;
+$white-opacity-ten: rgba(#FFFFFF,.1) !default;
+$white-opacity-eight: rgba(#FFFFFF,.08) !default;
+
+$default: rgba(#62534c,1) !default;
+
+$orange: rgba(#FF6701,1) !default;
+$green: rgba(#2EBA00,1) !default;
+$green-hover: rgba(#36ce04,1) !default;
+$blue: rgba(#4A90E2,1) !default;
+$purple: rgba(#BD10E0,1) !default;
+$danger: rgba(#D0021B,1) !default;
+$danger-hover: rgba(#e0051f,1) !default;
+$offline-bg: rgba(#D0021B,.1) !default;
+
+
+$opacity-seventy: 70;
+
+$html-bg: linear-gradient($light-gray, $dark-gray) !default; //默认渐变背景
+$body-bg: $body-default-color; //默认可调节背景
+
+.orange{
+    background: $orange;
+}
+.green{
+    background: $green;
+}
+.blue{
+    background: $blue;
+}
+.purple{
+    background: $purple;
+}
+.default-bg{
+    background: $body-default-color;
+}
+.font-color{
+    color: $white-opacity-seventy;
+}
+.light-gray{
+    color: $light-gray;
+}
+.dark-gray{
+    color: $dark-gray;
+}
+.icon-color{
+    color: $icon;
+}
+.selected-color{
+    color: $selected;
+}
+.logo-color{
+    color: $logo;
+}
+.scrollbar-color{
+    color: $scrollbar;
+}
+.scrollbar-bg{
+    color: $scrollbar-bg;
+}
+.input-border-color{
+    border-color: $input-border;
+}
+.black{
+    color: $black;
+}
+.black-opacity-twentyfour{
+    color: $black-opacity-twentyfour;
+}
+.black-opacity-sixteen{
+    color: $black-opacity-sixteen;
+}
+.black-opacity-fifteen{
+    color: $black-opacity-fifteen;
+}
+.black-opacity-thirteen{
+    color: $black-opacity-thirteen;
+}
+.black-opacity-twelve{
+    color: $black-opacity-twelve;
+}
+.black-opacity-ten{
+    color: $black-opacity-ten;
+}
+.white-opacity-ten{
+    color: $white-opacity-ten;
+}
+.white-opacity-fifteen{
+    color: $white-opacity-fifteen;
+}
+.white-opacity-thirtysix{
+    color: $white-opacity-thirtysix;
+}
+
+
+
+
+
+

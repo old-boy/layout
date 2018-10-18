@@ -1,0 +1,151 @@
+/**
+     * CC 管理样式
+ */
+@charset 'utf-8';
+
+@import 'ui';
+@import 'common';
+
+/**
+   * 注册
+   * 登录
+   * 忘记密码
+ */
+.sign-main{
+    width: 100%;
+    height: calc(100% - 64px);
+    display: block;
+    max-width: 42em;
+    margin: auto;
+    position: relative;
+    top: 0;
+    .form-signin{
+        width: 100%;
+        max-width: 600px;
+        min-height: 40vh;
+        background: #3b3f47;
+        padding: 6em;
+        position: absolute;
+        top: calc(35% - 64px);
+        transform: translateY(-50%);
+        left: 50%;
+        transform: translateX(-50%);
+        transition: $transition-base;
+        @media (max-width: 768px){
+            max-width: 500px;
+            min-width: $min-w;
+            position: absolute;
+            top: calc(42% - 64px);
+            box-shadow: 0px 6px 10px rgba(10, 6, 6, 0.5);
+            border-radius: 20px;
+        }
+    }
+}
+
+/**
+  * main，sidebar中菜单对应内容区
+ */
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    @media (max-width: 768px){
+        max-width: 768px;
+    }
+    /**
+      *  content右侧区域 中包含如下ui，如果修改相应组件，请至ui文件夹中修改对应ui样式
+      *  Breadcrumb.scss
+      *  Button.scss
+      *  Card.scss
+      *  CheckBox.scss
+      *  Dropdown.scss
+      *  Input.scss
+      *  ListGroup.scss
+      *  Media.scss
+      *  Scrollbar.scss
+      *  Search.scss
+      *  Sidebar.scss
+     */
+    .content{
+        width: 82vw;
+        height: auto;
+        float: right;
+        &::-webkit-selection{
+            background: $white-opacity-ten;
+        }
+        &::-moz-selection{
+            background: $white-opacity-ten;
+        }
+        &::selection{
+            background: $white-opacity-ten;
+        }
+        @media (max-width: 1200px){
+             max-width: calc(100vw - 230px);
+        }
+        @media (max-width: 850px){
+            min-width: calc(100vw - 50px);
+        }
+        //右侧区域，顶部
+        .header{
+            width: 100%;
+            height: 64px;
+            line-height: 64px;
+            display: block;
+            border-bottom: $border-width solid $black-opacity-sixteen;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            .content-title{
+                font-size: $pixel-eighteen;
+                font-weight: $font-weight-light;
+                color: $white-opacity-seventy;
+                line-height: 64px;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                @extend .hover-transition;
+            }
+        }
+        //右侧区域，内容
+        .box{
+            width: 100%;
+            height: calc(100vh - 64px);
+            @extend .search;
+            //主体内容
+            .filter-content{
+                width: auto;
+                padding-left: 320px;
+                height: calc(100vh - 64px);
+                .export{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    text-decoration: none;
+                    .icon{
+                        font-size: $pixel-twentyfour;
+                        text-decoration: none;
+                    }
+                }
+            }
+            //主体底部
+            .box-bottom{
+                width: 50px;
+                height: 50px;
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                .question{
+                    text-decoration: none;
+                    color: $white-opacity-seventy;
+                    &:hover{
+                        color: $white-opacity-thirtysix;
+                        @extend .hover-transition;
+                    }
+                }
+            }
+        }
+    }
+}
+

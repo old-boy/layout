@@ -1,0 +1,124 @@
+@charset 'utf-8';
+
+
+
+.bootstrap-table{
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    .fixed-table-pagination{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .fixed-table-container{
+        border: $border;
+       thead{
+            th{
+                border-left: $border;
+            }
+        } 
+        tbody{
+            tr{
+                background: transparent;
+                &:nth-of-type(odd){
+                    background-color: $black-opacity-five;
+                }
+            }
+            td{
+                border-left: $border;
+            }
+            .selected{
+                td{
+                    background-color: $black-opacity-fifteen;
+                }
+            }
+        }
+        .fixed-table-body{
+            color: $black-opacity-fourtyfive;
+        }
+    }
+    .fixed-table-body{
+        
+    }
+    .fixed-table-toolbar{
+        display: flex;
+        justify-content: flex-end;
+        .dropdown-toggle{
+            &:after{
+                
+            }
+        }
+    }
+    .table{
+        overflow-x: auto;
+        overflow-y: auto;
+        border-bottom: $border;
+        height: 100%;
+        th{
+            border-bottom: $border;
+            border-top: $border;
+        }
+        td{
+            border-top: $border;
+        }
+        thead{
+            tr{
+                th{
+                    border-bottom: $border;
+                }
+            }
+        } 
+    }
+}
+.table-hover {
+  tbody tr {
+    &:hover{
+        background-color: $black-opacity-ten;
+    }
+  }
+}
+.pagination-detail,.pagination{
+    flex: 1 1 auto;
+}
+.pagination-info,.page-list{
+    color: $black-opacity-seventy;
+}
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    li{
+        a{
+            background: $black-opacity-ten;
+            color: $white-opacity-seventy;
+            border: $border;
+            &:hover{
+                background: transparent;
+                color: $white-opacity-eight;
+                border: $border-hover;
+                @extend .hover-transition;
+            }
+        }
+    }
+    .page-item.active{
+        .page-link{
+            background-color: $logo;
+            border-color: $logo;
+        }
+    }
+    .active{
+        cursor: pointer;
+        display: block;
+        max-height: 30px;
+        a{
+            background-color: $logo;
+            border-color: $logo;
+            &:hover{
+                background-color: $logo-hover;
+                border-color: $logo-hover;
+            }
+        }
+    }
+}
+

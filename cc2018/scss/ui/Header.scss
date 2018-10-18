@@ -1,0 +1,27 @@
+@charset 'utf-8';
+
+.header{
+    height: 64px;
+    line-height: 64px;
+    border-bottom: $border-width solid $black-opacity-sixteen;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    @media (max-width: 720px){
+        display: flex;
+        justify-content: center;
+        .language{
+            display: none;
+        }
+        .logo{
+            .icon{
+                font-size: 2.25rem;
+            }
+        }
+    }
+    .icon{
+        display: inline-block;
+        line-height: 64px;
+    }
+}
+

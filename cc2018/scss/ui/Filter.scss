@@ -1,0 +1,185 @@
+@charset 'utf-8';
+
+
+.filter-list{
+    height: auto;
+    .filter-item{
+        min-height: $min-height;
+        display: flex;
+        align-items: center;
+        padding-left: 3em;
+        margin-bottom: 0;
+        @extend .border-bottom;
+        &:first-child{
+        }
+        &:last-child{
+            border-bottom: 0;
+            margin-bottom: $min-height;
+        }
+        .form-check-label{
+            color: $white-opacity-seventy;
+        }
+    }
+    .filter-active{
+        background: $black-opacity-twentyfour;
+    }
+}
+
+.radio,.checkbox{
+    .filter-item{
+        min-height: $min-height + 30;
+    }
+}
+
+.filter-pannel{
+    display: none;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    width: 320px;
+    height: 0;
+    width: 100%;
+    color: $black-opacity-seventy;
+    background: $filter-pannel-color;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    .filter-pannel-header{
+        width: 100%;
+        height: 40px;
+        @extend .border-bottom;
+    }
+    .filter-close{
+        font-size: 24px;
+        display: block;
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        right: 3px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        z-index: 100;
+        cursor: pointer;
+    }
+    .filter-pannel-content{
+        width: 100%;
+        height: calc(100% - 40px);
+        .breadcrumb-title{
+            padding: 10px 1em 10px;
+            color: $white-opacity-seventy;
+        }
+        .filter-date{
+            margin-bottom: 10px;
+        }
+        input{
+            position: relative;
+        }
+        .filter-bottm{
+            position: absolute;
+            bottom: 40px;
+        }
+    }
+}
+//筛选
+.filter{
+    min-width: 150px;
+    height: calc(100vh - 64px);
+    float: left;
+    border-right: 1px solid $black-opacity-ten;
+    overflow: hidden;
+    position: relative;
+    //搜索移至ui:Search.scss
+    .form-record{
+        height:100% ;
+        z-index: 80;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    //搜索btn
+    .filter-bottm{
+        opacity: 0;
+        width: 100%;
+        height: 0;
+        background: $filter-pannel-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 0 10px;
+        z-index: 999;
+    }
+    .confirm{
+        opacity: 1;
+        width: 320px;
+        height: 50px;
+        background: $html-bg;
+        position: absolute;
+        bottom: 4.2vh;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 0 10px;
+        z-index: 999;
+    }
+}
+
+/*employee*/
+.employee{
+    .filter-list{
+        .filter-item{
+            min-height: $min-height + 30;
+        }
+    }
+}
+
+/*record*/
+.record{
+    .filter-list{
+        .filter-item{
+            min-height: $min-height;
+        }
+    }
+}
+
+/*analyze*/
+.analyze{
+    .filter-list{
+        .filter-item{
+            min-height: $min-height;
+        }
+    }
+}
+
+/*department*/
+.department{
+    .filter-list{
+        .filter-item{
+            min-height: $min-height;
+        }
+    }
+}
+
+/*device*/
+.device{
+    .filter-list{
+        .filter-item{
+            min-height: $min-height + 30;
+            padding: 0 10px 0 3em;
+            .media{
+                flex: 1 auto;
+            }
+        }
+        .Offline{
+            background-color: $offline-bg;
+        }
+    }
+}
